@@ -1,0 +1,480 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Final Project</title>
+<link rel="stylesheet" href="mystyle.css">
+<script src="myscript.js"></script>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2&family=Fugaz+One&family=Nanum+Gothic&family=Noto+Sans+KR&family=Poor+Story&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+
+</head>
+
+<body onload="loading()">
+
+<div id="layout">
+    <div id="sidebar">
+        <div id="box_small">
+            <img class="profile" src="profile.jpg">
+        </div>
+        <div id="name">
+            <span style="font-weight: bold;">학미새</span><span>님</span>
+        </div>
+        <nav>
+            <a id="btn_home" href="#home">HOME</a>
+            <a id="btn_now" href="#now">NOW</a>
+            <a id="btn_month" href="#month" onclick="calendar()">MONTH</a>
+            <a id="btn_mate" href="#mate">StudyMATE</a>
+        </nav>
+        <div id="yesterday">
+            <div>💛과거의 업적💛</div>
+            <span id="h"></span> : <span id="m"></span> : <span id="s"></span>
+        </div>
+    </div>
+    
+    <scroll-container>
+        <div>
+            <scroll-page id="home">
+                <div id="black" style="height: 100vh;">
+                    <div>
+                        <div class="header" id="start_header">STUDY with ME  •'-'•)و✧</div>
+                        <div id="hi">
+                            <script>
+                                var d = new Date();
+                                document.write(d.getFullYear()+"년 "+(d.getMonth()+1)+"월 "+d.getDate()+"일");
+                            </script>
+                            <br> 오늘도 <span>미새</span> 는 달립니다
+                        </div>
+                        <div id="box">
+                            <img class="profile" src="profile.jpg">
+                        </div>
+                        <div id="start">
+                            <a id="btn_start" href="#now" onclick="start()">START</a>
+                        </div>
+                    </div> 
+                </div>   
+            </scroll-page>
+            <scroll-page id="now">
+                <div id="top">
+                    <div style="text-align: center;">⏳</div>
+                    <div id="time">
+                        <span id="hh" style="font-family: 'Fugaz One', cursive"></span>  :  
+                        <span id="mm" style="font-family: 'Fugaz One', cursive"></span>  :  
+                        <span id="ss" style="font-family: 'Fugaz One', cursive"></span>
+                    </div>
+                </div>
+                <div id="btn">
+                    <button id="btn_rest" onclick="rest()" onmouseover="ask_rest()" onmouseout="out_btn()">REST</button>
+                    <button id="btn_restart" onclick="restart()">RESTART</button>
+                    <button id="btn_finish" onclick="finish()">FINISH</button>
+                    <div id="btn_txt">
+                        
+                    </div>
+                </div>
+                <a id="btn_check" href="#now2" onclick="put_grass()">CHECK!<br>🔻</a>
+            </scroll-page>
+
+
+            <scroll-page id="now2">
+                <div>
+                    <button onclick="test()">TEST</button>
+                    <div class = "header" id= "head">🌱Check Your Grass🌱</div>
+                    <div id = "color_per">
+                        <div class="color2_1"></div> <div class="per_1">0%</div> <div> </div>
+                        <div class="color2_2"></div> <div class="per_2">25%</div> <div> </div>
+                        <div class="color2_3"></div> <div class="per_3">50%</div> <div> </div>
+                        <div class="color2_4"></div> <div class="per_4">75%</div> <div> </div>
+                        <div class="color2_5"></div> <div class="per_5">100%</div> <div> </div>
+                    </div>
+                    <div class="slide">
+                        <input type="radio" name="pos_" id="pos5" checked>
+                        <input type="radio" name="pos_" id="pos6">
+                        <input type="radio" name="pos_" id="pos7">
+                        <input type="radio" name="pos_" id="pos8">
+                        <ul>
+                            <li>
+                                <div class="inline">
+                                    <div style="text-align: center;">JAN</div>
+                                    <div class="grid2">
+                                        <script>
+                                            //한 달 42칸 
+                                            for(var i = 0; i < 42; i++) {
+                                                document.write("<div id=\"0/"+i+"\"></div>");
+                                            }
+                                        </script>
+                                    </div>
+                                </div>
+                                <div class="inline">
+                                    <div style="text-align: center;">FEB</div>
+                                    <div class="grid2">
+                                        <script>
+                                            for(var i = 0; i < 42; i++) {
+                                                document.write("<div id=\"1/"+i+"\"></div>");
+                                            }
+                                        </script>
+                                    </div>
+                                </div>
+                                <div class="inline">
+                                    <div style="text-align: center;">MAR</div>
+                                    <div class="grid2">
+                                        <script>
+                                            for(var i = 0; i < 42; i++) {
+                                                document.write("<div id=\"2/"+i+"\"></div>");
+                                            }
+                                        </script>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="inline">
+                                    <div style="text-align: center;">APR</div>
+                                    <div class="grid2">
+                                        <script>
+                                            for(var i = 0; i < 42; i++) {
+                                                document.write("<div id=\"3/"+i+"\"></div>");
+                                            }
+                                        </script>
+                                    </div>
+                                </div>
+                                <div class="inline">
+                                    <div style="text-align: center;">MAY</div>
+                                    <div class="grid2">
+                                        <script>
+                                            for(var i = 0; i < 42; i++) {
+                                                document.write("<div id=\"4/"+i+"\"></div>");
+                                            }
+                                        </script>
+                                    </div>
+                                </div>
+                                <div class="inline">
+                                    <div style="text-align: center;">JUN</div>
+                                    <div class="grid2">
+                                        <script>
+                                            for(var i = 0; i < 42; i++) {
+                                                document.write("<div id=\"5/"+i+"\"></div>");
+                                            }
+                                        </script>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="inline">
+                                    <div style="text-align: center;">JUL</div>
+                                    <div class="grid2">
+                                        <script>
+                                            for(var i = 0; i < 42; i++) {
+                                                document.write("<div id=\"6/"+i+"\"></div>");
+                                            }
+                                        </script>
+                                    </div>
+                                </div>
+                                <div class="inline">
+                                    <div style="text-align: center;">AUG</div>
+                                    <div class="grid2">
+                                        <script>
+                                            for(var i = 0; i < 42; i++) {
+                                                document.write("<div id=\"7/"+i+"\"></div>");
+                                            }
+                                        </script>
+                                    </div>
+                                </div>
+                                <div class="inline">
+                                    <div style="text-align: center;">SEP</div>
+                                    <div class="grid2">
+                                        <script>
+                                            for(var i = 0; i < 42; i++) {
+                                                document.write("<div id=\"8/"+i+"\" ></div>");
+                                            }
+                                        </script>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="inline">
+                                    <div style="text-align: center;">OCT</div>
+                                    <div class="grid2">
+                                        <script>
+                                            for(var i = 0; i < 42; i++) {
+                                                document.write("<div id=\"9/"+i+"\"></div>");
+                                            }
+                                        </script>
+                                    </div>
+                                </div>
+                                <div class="inline">
+                                    <div style="text-align: center;">NOV</div>
+                                    <div class="grid2">
+                                        <script>
+                                            for(var i = 0; i < 42; i++) {
+                                                document.write("<div id=\"10/"+i+"\"></div>");
+                                            }
+                                        </script>
+                                    </div>
+                                </div>
+                                <div class="inline">
+                                    <div style="text-align: center;">DEC</div>
+                                    <div class="grid2">
+                                        <script>
+                                            for(var i = 0; i < 42; i++) {
+                                                document.write("<div id=\"11/"+i+"\"></div>");
+                                            }
+                                        </script>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        <p class="bullet">
+                          <label for="pos5">1</label>
+                          <label for="pos6">2</label>
+                          <label for="pos7">3</label>
+                          <label for="pos8">4</label>
+                        </p>
+                    </div>
+                </div>
+                
+            </scroll-page>
+            </scroll-page>
+            <scroll-page id="month">
+                <div>
+                    <div class = "header"> 🌊Create Your Wave🌊</div>
+                    <div id = "color_per">
+                        <div class="color_1"></div> <div class="per_1">0%</div> <div> </div>
+                        <div class="color_2"></div> <div class="per_2">25%</div> <div> </div>
+                        <div class="color_3"></div> <div class="per_3">50%</div> <div> </div>
+                        <div class="color_4"></div> <div class="per_4">75%</div> <div> </div>
+                        <div class="color_5"></div> <div class="per_5">100%</div> <div> </div>
+                    </div>
+                    <div class="slide">
+                        <input type="radio" name="pos" id="pos1" checked>
+                        <input type="radio" name="pos" id="pos2">
+                        <input type="radio" name="pos" id="pos3">
+                        <input type="radio" name="pos" id="pos4">
+                        <ul>
+                            <li>
+                                <div class="inline">
+                                    <div style="text-align: center;">JAN</div>
+                                    <div class="grid">
+                                        <script>
+                                            //한 달 42칸 
+                                            for(var i = 0; i < 42; i++) {
+                                                document.write("<div id=\"0_"+i+"\" onclick=\"change(0,"+i+")\"></div>");
+                                            }
+                                        </script>
+                                    </div>
+                                </div>
+                                <div class="inline">
+                                    <div style="text-align: center;">FEB</div>
+                                    <div class="grid">
+                                        <script>
+                                            for(var i = 0; i < 42; i++) {
+                                                document.write("<div id=\"1_"+i+"\" onclick=\"change(1,"+i+")\"></div>");
+                                            }
+                                        </script>
+                                    </div>
+                                </div>
+                                <div class="inline">
+                                    <div style="text-align: center;">MAR</div>
+                                    <div class="grid">
+                                        <script>
+                                            for(var i = 0; i < 42; i++) {
+                                                document.write("<div id=\"2_"+i+"\" onclick=\"change(2,"+i+")\"></div>");
+                                            }
+                                        </script>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="inline">
+                                    <div style="text-align: center;">APR</div>
+                                    <div class="grid">
+                                        <script>
+                                            for(var i = 0; i < 42; i++) {
+                                                document.write("<div id=\"3_"+i+"\" onclick=\"change(3,"+i+")\"></div>");
+                                            }
+                                        </script>
+                                    </div>
+                                </div>
+                                <div class="inline">
+                                    <div style="text-align: center;">MAY</div>
+                                    <div class="grid">
+                                        <script>
+                                            for(var i = 0; i < 42; i++) {
+                                                document.write("<div id=\"4_"+i+"\" onclick=\"change(4,"+i+")\"></div>");
+                                            }
+                                        </script>
+                                    </div>
+                                </div>
+                                <div class="inline">
+                                    <div style="text-align: center;">JUN</div>
+                                    <div class="grid">
+                                        <script>
+                                            for(var i = 0; i < 42; i++) {
+                                                document.write("<div id=\"5_"+i+"\" onclick=\"change(5,"+i+")\"></div>");
+                                            }
+                                        </script>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="inline">
+                                    <div style="text-align: center;">JUL</div>
+                                    <div class="grid">
+                                        <script>
+                                            for(var i = 0; i < 42; i++) {
+                                                document.write("<div id=\"6_"+i+"\" onclick=\"change(6,"+i+")\"></div>");
+                                            }
+                                        </script>
+                                    </div>
+                                </div>
+                                <div class="inline">
+                                    <div style="text-align: center;">AUG</div>
+                                    <div class="grid">
+                                        <script>
+                                            for(var i = 0; i < 42; i++) {
+                                                document.write("<div id=\"7_"+i+"\" onclick=\"change(7,"+i+")\"></div>");
+                                            }
+                                        </script>
+                                    </div>
+                                </div>
+                                <div class="inline">
+                                    <div style="text-align: center;">SEP</div>
+                                    <div class="grid">
+                                        <script>
+                                            for(var i = 0; i < 42; i++) {
+                                                document.write("<div id=\"8_"+i+"\" onclick=\"change(8,"+i+")\"></div>");
+                                            }
+                                        </script>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="inline">
+                                    <div style="text-align: center;">OCT</div>
+                                    <div class="grid">
+                                        <script>
+                                            for(var i = 0; i < 42; i++) {
+                                                document.write("<div id=\"9_"+i+"\" onclick=\"change(9,"+i+")\"></div>");
+                                            }
+                                        </script>
+                                    </div>
+                                </div>
+                                <div class="inline">
+                                    <div style="text-align: center;">NOV</div>
+                                    <div class="grid">
+                                        <script>
+                                            for(var i = 0; i < 42; i++) {
+                                                document.write("<div id=\"10_"+i+"\" onclick=\"change(10,"+i+")\"></div>");
+                                            }
+                                        </script>
+                                    </div>
+                                </div>
+                                <div class="inline">
+                                    <div style="text-align: center;">DEC</div>
+                                    <div class="grid">
+                                        <script>
+                                            for(var i = 0; i < 42; i++) {
+                                                document.write("<div id=\"11_"+i+"\" onclick=\"change(11,"+i+")\"></div>");
+                                            }
+                                        </script>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        <p class="bullet">
+                          <label for="pos1">1</label>
+                          <label for="pos2">2</label>
+                          <label for="pos3">3</label>
+                          <label for="pos4">4</label>
+                        </p>
+                    </div>
+                </div>
+                
+            </scroll-page>
+            <scroll-page id="mate" style="grid-template-rows:150px auto;"> 
+                <div class="header" style="font-size: 40px; ">STUDY with your MATE •'-'•)و✧</div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr;">
+                    <div id="youtube">
+                        <h2> Study with them   ＿〆(。。)  </h2>
+                        <ul>
+                            <li style="display: grid; grid-template-columns: 70px auto;">
+                                <img src="youtube.png" width="50px"> 
+                                <div style="margin-top: 10px;"> 
+                                    <a href="https://www.youtube.com/watch?v=HMyn6eMV0OA">제리의 study with me</a>  <span class="small">  5h</span>
+                              
+                                </div>
+                            </li>
+                            <li style="display: grid; grid-template-columns: 70px auto;">
+                                <img src="youtube.png" width="50px"> 
+                                <div style="margin-top: 10px;"> 
+                                    <a href="https://www.youtube.com/watch?v=pTBR81AqnoQ">밍찌의 study with me</a>  <span class="small">  10h 20m</span>                             
+                                </div>
+                            </li>
+                            <li style="display: grid; grid-template-columns: 70px auto;">
+                                <img src="youtube.png" width="50px"> 
+                                <div style="margin-top: 10px;"> 
+                                    <a href="https://www.youtube.com/watch?v=pTBR81AqnoQ">밍찌의 study with me2 백색소음</a>  <span class="small">  7h</span>                              
+                                </div>
+                            </li>
+                            <li style="display: grid; grid-template-columns: 70px auto;">
+                                <img src="youtube.png" width="50px"> 
+                                <div style="margin-top: 10px;"> 
+                                    <a href="https://www.youtube.com/watch?v=Y5uYpjK-TKA">밍찌의 study with me3 펜,종이소리</a>  <span class="small">  5h</span>                              
+                                </div>
+                            </li>
+                            <li style="display: grid; grid-template-columns: 70px auto;">
+                                <img src="youtube.png" width="50px"> 
+                                <div style="margin-top: 10px;"> 
+                                    <a href="https://www.youtube.com/watch?v=Y5uYpjK-TKA">이다지쌤의 study with me</a>  <span class="small">  10h 20m</span>                              
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="music" >
+                        <h2>Playlist   ᖰ( ๑❛ᴗ❛ )ᖳ</h2>
+                        <ul>
+                            <li style="display: grid; grid-template-columns: 70px auto;">
+                                <img src="music.png" width="50px"> 
+                                <div style="margin-top: 10px;" > 
+                                    <a href="https://www.youtube.com/watch?v=WTO-0PC_aZU"> 이구역 카공금지! 2021 노동요</a>
+                                    <div class="small"> #노동요 #내적댄스 #졸릴때 #시끄러움</div>                                
+                                </div>
+                            </li>
+                            <li style="display: grid; grid-template-columns: 70px auto;">
+                                <img src="music.png" width="50px"> 
+                                <div style="margin-top: 10px;"> 
+                                    <a href="https://www.youtube.com/watch?v=pTBR81AqnoQ"> SM 덕후들 심장부터 반응하는 SMP 노래 모음</a>
+                                    <div class="small"> #노동요 #SM #내적댄스 #시끄러움</div>                          
+                                </div>
+                            </li>
+                            <li style="display: grid; grid-template-columns: 70px auto;">
+                                <img src="music.png" width="50px"> 
+                                <div style="margin-top: 10px;"> 
+                                    <a href="https://www.youtube.com/watch?v=cbuZfY2S2UQ"> 코딩할때 듣기 좋은 노래</a>
+                                    <div class="small"> #lofi #잔잔함 #카페분위기</div>                          
+                                </div>
+                            </li>
+                            <li style="display: grid; grid-template-columns: 70px auto;">
+                                <img src="music.png" width="50px"> 
+                                <div style="margin-top: 10px;"> 
+                                    <a href="https://www.youtube.com/watch?v=CMYQVPAYJcQ"> 가슴 한편이 뭉클해지는 아이유 노래 모음</a>
+                                    <div class="small"> #아이유 #발라드 #잔잔함 #최애곡들 #새벽</div>                          
+                                </div>
+                            </li>
+                            <li style="display: grid; grid-template-columns: 70px auto;">
+                                <img src="music.png" width="50px"> 
+                                <div style="margin-top: 10px;"> 
+                                    <a href="https://www.youtube.com/watch?v=0luQ6fqbUTU"> ˚₊‧하이틴 ʙɢᴍ˚₊‧</a>
+                                    <div class="small"> #하이틴 #두근두근 #기분좋음 #팝송</div>                          
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                </div>
+            </scroll-page>
+        </div>
+    </scroll-container>
+</div>
+
+</body>
+</html>
